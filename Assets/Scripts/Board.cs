@@ -18,6 +18,7 @@ public class Board : MonoBehaviour
     public GameObject tilePrefab;
     private BackgroundTile[,] allTiles;
     public GameObject[] dots;
+    public GameObject destroyEffect;
     public GameObject[,] allDots;
     private FindMatches findMatches;
     // Start is called before the first frame update
@@ -99,6 +100,8 @@ public class Board : MonoBehaviour
         if (allDots[column, row].GetComponent<Dot>().isMatched)
         {
             findMatches.currentMatches.Remove(allDots[column, row]);
+            GameObject particle = Instantiate(destroyEffect, allDots[column, row].transform.position, Quaternion.identity);
+            Destroy(particle, .5f);
             Destroy(allDots[column, row]);
             allDots[column, row] = null;
         }
