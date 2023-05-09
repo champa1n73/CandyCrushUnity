@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using System.Linq;
 public class FindMatches : MonoBehaviour
 {
     private Board board;
@@ -34,6 +34,28 @@ public class FindMatches : MonoBehaviour
                         {
                             if (leftDot.tag == currentDot.tag && rightDot.tag == currentDot.tag)
                             {
+                                if (currentDot.GetComponent<Dot>().isRowCandy
+                                    || leftDot.GetComponent<Dot>().isRowCandy
+                                    || rightDot.GetComponent<Dot>().isRowCandy)
+                                {
+                                    currentMatches.Union(getRowPieces(j));
+                                }
+
+                                if (currentDot.GetComponent<Dot>().isColumnCandy)
+                                {
+                                    currentMatches.Union(getColumnPieces(i));
+                                }
+
+                                if (leftDot.GetComponent<Dot>().isColumnCandy)
+                                {
+                                    currentMatches.Union(getColumnPieces(i-1));
+                                }
+
+                                if (rightDot.GetComponent<Dot>().isColumnCandy)
+                                {
+                                    currentMatches.Union(getColumnPieces(i + 1));
+                                }
+
                                 if (!currentMatches.Contains(leftDot)) 
                                 {
                                     currentMatches.Add(leftDot);
@@ -60,6 +82,28 @@ public class FindMatches : MonoBehaviour
                         {
                             if (upDot.tag == currentDot.tag && downDot.tag == currentDot.tag)
                             {
+                                if (currentDot.GetComponent<Dot>().isColumnCandy
+                                    || upDot.GetComponent<Dot>().isColumnCandy
+                                    || downDot.GetComponent<Dot>().isColumnCandy)
+                                {
+                                    currentMatches.Union(getColumnPieces(i));
+                                }
+
+                                if (currentDot.GetComponent<Dot>().isRowCandy)
+                                {
+                                    currentMatches.Union(getRowPieces(j));
+                                }
+
+                                if (upDot.GetComponent<Dot>().isRowCandy)
+                                {
+                                    currentMatches.Union(getRowPieces(j + 1));
+                                }
+
+                                if (downDot.GetComponent<Dot>().isRowCandy)
+                                {
+                                    currentMatches.Union(getRowPieces(j - 1));
+                                }
+
                                 if (!currentMatches.Contains(upDot))
                                 {
                                     currentMatches.Add(upDot);
@@ -82,4 +126,90 @@ public class FindMatches : MonoBehaviour
             }
         }
     }
+
+    List<GameObject> getColumnPieces(int column)
+    {
+        List<GameObject> dots = new List<GameObject>();
+        for (int i = 0; i < board.height; i++)
+        {
+            if ((board.allDots[column, i] != null))
+            {
+                dots.Add(board.allDots[column, i]);
+                board.allDots[column, i].GetComponent<Dot>().isMatched = true;
+            }
+        }
+        return dots;
+    }
+
+    List<GameObject> getRowPieces(int row)
+    {
+        List<GameObject> dots = new List<GameObject>();
+        for (int i = 0; i < board.width; i++)
+        {
+            if ((board.allDots[i, row] != null))
+            {
+                dots.Add(board.allDots[i, row]);
+                board.allDots[i, row].GetComponent<Dot>().isMatched = true;
+            }
+        }
+        return dots;
+    }
+
+    public void CheckBombs()
+    {
+        // Did the player move something?
+        if (board.currentDot != null)
+        {
+            // Is the piece they moved matched?
+            if (board.currentDot.isMatched)
+            {
+                // make it unmatched 
+                board.currentDot.isMatched = false;
+                // Decide what kind of bomb to make
+                if ((board.currentDot.swipeAngle > -45 && board.currentDot.swipeAngle <= 45)
+                        || board.currentDot.swipeAngle < -135 || board.currentDot.swipeAngle >= 135)
+                {
+                    board.currentDot.MakeRowCandy();
+                }
+                else
+                {
+                    board.currentDot.MakeColumnCandy();
+                }
+            }
+            // Is the other piece matched?
+            else if (board.currentDot.otherDot != null)
+            {
+                Dot otherDot = board.currentDot.otherDot.GetComponent<Dot>();
+                // Is the other Dot matched?
+                if (otherDot.isMatched)
+                {
+                    // Make it unmatched 
+                    otherDot.isMatched = false;
+                    // Decide what kind of bomb to make
+                    /*int typeOfBomb = Random.Range(0, 100);
+                    if (typeOfBomb < 50)
+                    {
+                        // Make a Row Bomb
+                        otherDot.MakeRowCandy();
+                    }
+                    else if (typeOfBomb >= 50)
+                    {
+                        // Make a Column Bomb
+                        otherDot.MakeColumnCandy();
+                    }*/
+                    if ((board.currentDot.swipeAngle > -45 && board.currentDot.swipeAngle <= 45)
+                        || board.currentDot.swipeAngle < -135 || board.currentDot.swipeAngle >= 135)
+                    {
+                        otherDot.MakeRowCandy();
+                    }
+                    else
+                    {
+                        otherDot.MakeColumnCandy();
+                    }
+                }    
+            }
+        }
+    }
+
+    
 }

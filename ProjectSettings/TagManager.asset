@@ -12,6 +12,14 @@ TagManager:
   - Light Brown Dot
   - Orange Dot
   - Yellow Green Dot
+  - BananaPie
+  - CandyBall
+  - CircleCandy
+  - Cookie
+  - Cupcake
+  - Donut
+  - IceCream
+  - PieceOfCake
   layers:
   - Default
   - TransparentFX
