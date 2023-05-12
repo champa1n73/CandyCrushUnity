@@ -291,7 +291,6 @@ MonoBehaviour:
   - {fileID: 9083632785453352498, guid: 7207db7af124d4b49a029206af4afdcc, type: 3}
   - {fileID: 6203513479988757225, guid: 18ad713510a244a45984649607a6bd14, type: 3}
   - {fileID: 2329759008496692766, guid: edd5a2ed837c03842a6afc2b74a87725, type: 3}
-  - {fileID: 548716825083768593, guid: 36847463e5636f4418f487193a5e5854, type: 3}
   destroyEffect: {fileID: 3709318879727480720, guid: 8827757cb3d432c4fb4b2eca558f7ff2, type: 3}
   currentDot: {fileID: 0}
 --- !u!4 &1269471184
