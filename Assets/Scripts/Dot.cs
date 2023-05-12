@@ -25,11 +25,13 @@ public class Dot : MonoBehaviour
     public float swipeAngle = 0;
     public float swipeResist = 1f;
 
-    [Header("Power up")]
+    [Header("Powerup Stuff")]
+    public bool isColorBomb;
     public bool isColumnCandy;
     public bool isRowCandy;
     public GameObject rowCandy;
     public GameObject columnCandy;
+    public GameObject colorBomb;
     // Start is called before the first frame update
     void Start()
     {
@@ -104,9 +106,23 @@ public class Dot : MonoBehaviour
             transform.position = tempPosition;
         }
     }
-
+        
     public IEnumerator CheckMoveCo() // Coroutine function
-    {
+    {   
+        if (isColorBomb)
+        {
+            // This piece is a color bomb, and the other piece is the color to destroy
+            findMatches.MatchPiecesOfColor(otherDot.tag);
+            isMatched = true;
+        }
+        else if (otherDot.GetComponent<Dot>().isColorBomb)
+        {
+            // The other piece is a color bomb, and this piece has the color to destroy
+            findMatches.MatchPiecesOfColor(this.gameObject.tag);
+            otherDot.GetComponent<Dot>().isMatched = true;
+        }
+            
+            
         yield return new WaitForSeconds(0.3f);
         if (otherDot != null)
         {

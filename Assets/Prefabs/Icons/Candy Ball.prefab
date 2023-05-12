@@ -124,7 +124,9 @@ MonoBehaviour:
   otherDot: {fileID: 0}
   swipeAngle: 0
   swipeResist: 1
+  isColorBomb: 0
   isColumnCandy: 0
   isRowCandy: 0
   rowCandy: {fileID: 3271039973163423883, guid: 47cb556ffcb1d694a96bcb20344f5a34, type: 3}
   columnCandy: {fileID: 2700535691027755184, guid: 7e892855eb6a052438d48efbcf84b41b, type: 3}
+  colorBomb: {fileID: 5029523924535758295, guid: b99910f80642c6240b538f24d462203e, type: 3}
