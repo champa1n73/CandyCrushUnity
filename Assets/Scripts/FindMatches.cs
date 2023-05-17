@@ -182,7 +182,7 @@ public class FindMatches : MonoBehaviour
                 if (i >= 0 && i < board.width && j >= 0 && j < board.height)
                 {
                     dots.Add(board.allDots[i, j]);
-                    board.allDots[i, j].GetComponent<Dot>().isMatched = true;
+                    board.allDots[i, j].GetComponent<Dot>().isMatched = true; 
                 }
             }
         }
