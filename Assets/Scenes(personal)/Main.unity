@@ -134,6 +134,7 @@ GameObject:
   - component: {fileID: 519420032}
   - component: {fileID: 519420031}
   - component: {fileID: 519420029}
+  - component: {fileID: 519420033}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -207,6 +208,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &519420033
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f395138e6ecbb24468fbec752b849e25, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cameraOffset: -10
+  aspectRatio: 0.625
+  padding: 2
 --- !u!1 &1264873046
 GameObject:
   m_ObjectHideFlags: 0
@@ -284,7 +300,7 @@ MonoBehaviour:
   currentState: 1
   width: 7
   height: 10
-  offSet: 25
+  offSet: 10
   tilePrefab: {fileID: 8451575764528775319, guid: 8eeea95bbbdb6e84f9932a6f340da44b, type: 3}
   dots:
   - {fileID: 7562094170143975760, guid: 18761c5341fbda143a7e80fa054a21c2, type: 3}
@@ -292,6 +308,25 @@ MonoBehaviour:
   - {fileID: 6203513479988757225, guid: 18ad713510a244a45984649607a6bd14, type: 3}
   - {fileID: 2329759008496692766, guid: edd5a2ed837c03842a6afc2b74a87725, type: 3}
   destroyEffect: {fileID: 3709318879727480720, guid: 8827757cb3d432c4fb4b2eca558f7ff2, type: 3}
+  boardLayout:
+  - x: 0
+    y: 0
+    tileKind: 1
+  - x: 6
+    y: 9
+    tileKind: 1
+  - x: 6
+    y: 0
+    tileKind: 1
+  - x: 0
+    y: 9
+    tileKind: 1
+  - x: 4
+    y: 4
+    tileKind: 1
+  - x: 5
+    y: 4
+    tileKind: 1
   currentDot: {fileID: 0}
 --- !u!4 &1269471184
 Transform:
