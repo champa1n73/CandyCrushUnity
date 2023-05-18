@@ -20,6 +20,7 @@ TagManager:
   - Donut
   - IceCream
   - PieceOfCake
+  - Color
   layers:
   - Default
   - TransparentFX
