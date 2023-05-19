@@ -21,6 +21,7 @@ TagManager:
   - IceCream
   - PieceOfCake
   - Color
+  - Breakable
   layers:
   - Default
   - TransparentFX
