@@ -18,8 +18,8 @@ public class Dot : MonoBehaviour
     private FindMatches findMatches;
     private Board board;
     public GameObject otherDot;
-    private Vector2 firstTouchPosition;
-    private Vector2 finalTouchPosition;
+    private Vector2 firstTouchPosition = Vector2.zero;
+    private Vector2 finalTouchPosition = Vector2.zero;
     private Vector2 tempPosition;
 
     [Header("Swipe Stuff")]
@@ -45,7 +45,8 @@ public class Dot : MonoBehaviour
 
         endgameManager = FindObjectOfType<EndgameManager>();
         hintManager = FindObjectOfType<HintManager>();
-        board = FindObjectOfType<Board>();
+        board = GameObject.FindWithTag("Board").GetComponent<Board>();
+        //board = FindObjectOfType<Board>();
         findMatches = FindObjectOfType<FindMatches>();
         /*targetX = (int)transform.position.x;
         targetY = (int)transform.position.y;
@@ -86,8 +87,9 @@ public class Dot : MonoBehaviour
             if (board.allDots[column, row] != this.gameObject)
             {
                 board.allDots[column, row] = this.gameObject;
+                findMatches.FindAllMatches();
             }
-            findMatches.FindAllMatches();
+            
         }
         else
         {
@@ -104,8 +106,9 @@ public class Dot : MonoBehaviour
             if (board.allDots[column, row] != this.gameObject)
             {
                 board.allDots[column, row] = this.gameObject;
+                findMatches.FindAllMatches();
             }
-            findMatches.FindAllMatches();
+            
         }
         else
         {
@@ -303,29 +306,45 @@ public class Dot : MonoBehaviour
 
     public void MakeRowCandy()
     {
-        isRowCandy = true;
-        GameObject arrow = Instantiate(rowCandy, transform.position,Quaternion.identity);
-        arrow.transform.parent = this.transform;
+        if (!isColorBomb && !isColumnCandy && !isAdjacentBomb)
+        {
+            isRowCandy = true;
+            GameObject arrow = Instantiate(rowCandy, transform.position, Quaternion.identity);
+            arrow.transform.parent = this.transform;
+        }
+        
     }
 
     public void MakeColumnCandy()
     {
-        isColumnCandy = true;
-        GameObject arrow = Instantiate(columnCandy, transform.position, Quaternion.identity);
-        arrow.transform.parent = this.transform;
+        if (!isColorBomb && !isRowCandy && !isAdjacentBomb)
+        {
+            isColumnCandy = true;
+            GameObject arrow = Instantiate(columnCandy, transform.position, Quaternion.identity);
+            arrow.transform.parent = this.transform;
+        }
+            
     }
 
     public void MakeColorBomb()
     {
-        isColorBomb = true;
-        GameObject color = Instantiate(colorBomb, transform.position, Quaternion.identity);
-        color.transform.parent = this.transform;
-        this.gameObject.tag = "Color";
+        if (!isColumnCandy && !isRowCandy && !isAdjacentBomb)
+        {
+            isColorBomb = true;
+            GameObject color = Instantiate(colorBomb, transform.position, Quaternion.identity);
+            color.transform.parent = this.transform;
+            this.gameObject.tag = "Color";
+        }
+        
     }
     public void MakeAdjacentBomb()
     {
-        isAdjacentBomb = true;
-        GameObject marker = Instantiate(adjacentBomb, transform.position, Quaternion.identity);
-        marker.transform.parent = this.transform;   
+        if (!isColumnCandy && !isRowCandy && !isColorBomb)
+        {
+            isAdjacentBomb = true;
+            GameObject marker = Instantiate(adjacentBomb, transform.position, Quaternion.identity);
+            marker.transform.parent = this.transform;
+        }
+         
     }
 }

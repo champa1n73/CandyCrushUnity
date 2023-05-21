@@ -24,17 +24,17 @@ MonoBehaviour:
   scoreGoals: e803000088130000581b0000
   endGameRequirements:
     gameType: 1
-    counterValue: 120
+    counterValue: 150
   levelGoals:
   - numberNeeded: 2
-    numberCollected: 0
+    numberCollected: 16
     goalSprite: {fileID: 21300000, guid: 97e6e49b3944fbb4da6e401bcb8ef4f9, type: 3}
     matchValue: CandyBall
   - numberNeeded: 5
-    numberCollected: 0
+    numberCollected: 10
     goalSprite: {fileID: 21300000, guid: b399aa09934f90c4c897060ba5f61c08, type: 3}
     matchValue: BananaPie
   - numberNeeded: 5
-    numberCollected: 0
+    numberCollected: 15
     goalSprite: {fileID: 21300000, guid: 5794391a9e230454bab6de04a6dc11c3, type: 3}
     matchValue: Cupcake
