@@ -150,6 +150,7 @@ public class FindMatches : MonoBehaviour
                 }
             }
         }
+        
     }
 
     public void MatchPiecesOfColor(string color)

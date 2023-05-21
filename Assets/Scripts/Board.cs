@@ -219,27 +219,27 @@ public class Board : MonoBehaviour
 
     private MatchType ColumnOrRow()
     {
-        // Make a copy of the current matches
+        //Make a copy of the current matches
         List<GameObject> matchCopy = findMatches.currentMatches as List<GameObject>;
 
         matchType.type = 0;
         matchType.color = "";
-        // Cycle through all of match Copy and decide if a bomb needs to be made 
+
+        //Cycle through all of match Copy and decide if a bomb needs to be made
         for (int i = 0; i < matchCopy.Count; i++)
         {
-            // Store this dot 
+            //Store this dot
             Dot thisDot = matchCopy[i].GetComponent<Dot>();
             string color = matchCopy[i].tag;
             int column = thisDot.column;
             int row = thisDot.row;
             int columnMatch = 0;
             int rowMatch = 0;
-            // Cycle through the rest of the pieces and compare 
+            //Cycle through the rest of the pieces and compare
             for (int j = 0; j < matchCopy.Count; j++)
             {
-                // Store the next dot
+                //Store the next dot
                 Dot nextDot = matchCopy[j].GetComponent<Dot>();
-                
                 if (nextDot == thisDot)
                 {
                     continue;
@@ -254,15 +254,15 @@ public class Board : MonoBehaviour
                 }
             }
             // Return 3 if column or row match
-            // Return 2 if adjacent
-            // Return 1 if it's color bomb
+            //Return 2 if adjacent
+            //Return 1 if it's a color bomb
             if (columnMatch == 4 || rowMatch == 4)
             {
                 matchType.type = 1;
                 matchType.color = color;
                 return matchType;
             }
-            else if (columnMatch == 2 || rowMatch == 2)
+            else if (columnMatch == 2 && rowMatch == 2)
             {
                 matchType.type = 2;
                 matchType.color = color;
@@ -278,22 +278,20 @@ public class Board : MonoBehaviour
         matchType.type = 0;
         matchType.color = "";
         return matchType;
-        
     }
     private void CheckToMakeBombs()
     {
-        // How many objects are in findMatches currentMatches?
+        //How many objects are in findMatches currentMatches?
         if (findMatches.currentMatches.Count > 3)
         {
-            // What type of match?
+            //What type of match?
             MatchType typeOfMatch = ColumnOrRow();
             if (typeOfMatch.type == 1)
             {
-                // Make a color bomb
-                // is the current dot matched?
+                //Make a color bomb
+                //is the current dot matched?
                 if (currentDot != null && currentDot.isMatched && currentDot.tag == typeOfMatch.color)
                 {
-
                     currentDot.isMatched = false;
                     currentDot.MakeColorBomb();
                 }
@@ -304,10 +302,8 @@ public class Board : MonoBehaviour
                         Dot otherDot = currentDot.otherDot.GetComponent<Dot>();
                         if (otherDot.isMatched && otherDot.tag == typeOfMatch.color)
                         {
-
                             otherDot.isMatched = false;
                             otherDot.MakeColorBomb();
-
                         }
                     }
                 }
@@ -315,102 +311,28 @@ public class Board : MonoBehaviour
 
             else if (typeOfMatch.type == 2)
             {
-                // Make an adjacent bomb
+                //Make a adjacent bomb
+                //is the current dot matched?
                 if (currentDot != null && currentDot.isMatched && currentDot.tag == typeOfMatch.color)
                 {
-
-
                     currentDot.isMatched = false;
                     currentDot.MakeAdjacentBomb();
-
                 }
                 else if (currentDot.otherDot != null)
                 {
                     Dot otherDot = currentDot.otherDot.GetComponent<Dot>();
                     if (otherDot.isMatched && otherDot.tag == typeOfMatch.color)
                     {
-
                         otherDot.isMatched = false;
                         otherDot.MakeAdjacentBomb();
-
-
                     }
                 }
             }
-
             else if (typeOfMatch.type == 3)
             {
                 findMatches.CheckBombs(typeOfMatch);
             }
         }
-        /*if (findMatches.currentMatches.Count == 4 || findMatches.currentMatches.Count == 7)
-        {
-            findMatches.CheckBombs();
-        }
-        if (findMatches.currentMatches.Count == 5 || findMatches.currentMatches.Count == 8)
-        {
-            if (ColumnOrRow())
-            {
-                // Make a color bomb
-                // is the current dot matched?
-                if (currentDot != null)
-                {
-                    if (currentDot.isMatched)
-                    {
-                        if (!currentDot.isColorBomb)
-                        {
-                            currentDot.isMatched = false;
-                            currentDot.MakeColorBomb();
-                        }
-                    }
-                    else
-                    {
-                        if (currentDot.otherDot != null)
-                        {
-                            Dot otherDot = currentDot.otherDot.GetComponent<Dot>();
-                            if (otherDot.isMatched)
-                            {
-                                if (!otherDot.isColorBomb)
-                                {
-                                    otherDot.isMatched = false;
-                                    otherDot.MakeColorBomb();
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-            else
-            {
-                // Make an adjacent bomb
-                if (currentDot != null)
-                {
-                    if (currentDot.isMatched)
-                    {
-                        if (!currentDot.isAdjacentBomb)
-                        {
-                            currentDot.isMatched = false;
-                            currentDot.MakeAdjacentBomb();
-                        }
-                    }
-                    else
-                    {
-                        if (currentDot.otherDot != null)
-                        {
-                            Dot otherDot = currentDot.otherDot.GetComponent<Dot>();
-                            if (otherDot.isMatched)
-                            {
-                                if (!otherDot.isAdjacentBomb)
-                                {
-                                    otherDot.isMatched = false;
-                                    otherDot.MakeAdjacentBomb();
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        }*/
     }
 
     private void DestroyMatchesAt(int column, int row)
@@ -466,7 +388,6 @@ public class Board : MonoBehaviour
                 }
             }
         }
-        
         StartCoroutine(DecreaseRowCo2());
     }
 
@@ -552,7 +473,7 @@ public class Board : MonoBehaviour
 
     private bool MatchesOnBoard()
     {
-        findMatches.FindAllMatches();
+        
         for (int i = 0; i < width; i++)
         {
             for (int j = 0; j < height; j++)
@@ -571,9 +492,10 @@ public class Board : MonoBehaviour
 
     private IEnumerator FillBoardCo()
     {
-        
+
         yield return new WaitForSeconds(refillDelay);
         RefillBoard();
+        findMatches.FindAllMatches();
         yield return new WaitForSeconds(refillDelay);
         while (MatchesOnBoard())
         {
