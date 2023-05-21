@@ -18,6 +18,7 @@ public class EndgameRequirements
 }
 public class EndgameManager : MonoBehaviour
 {
+
     public GameObject movesLabel;
     public GameObject timeLabel;
     public GameObject youWinLabel;
@@ -28,11 +29,29 @@ public class EndgameManager : MonoBehaviour
     private Board board;
     private float timerSecond;
     
+
+    
     // Start is called before the first frame update
     void Start()
     {
         board = FindObjectOfType<Board>();
+        SetGameType();
         SetupGame(); 
+        
+    }
+
+    void SetGameType()
+    {
+        if (board.world != null)
+        {
+            if (board.level < board.world.levels.Length)
+            {
+                if (board.world.levels[board.level] != null)
+                {
+                    requirements = board.world.levels[board.level].endGameRequirements;
+                }
+            }
+        }
     }
 
     void SetupGame()

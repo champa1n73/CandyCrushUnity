@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d362254015798d4482326c7cd780c95, type: 3}
+  m_Name: Level 1
+  m_EditorClassIdentifier: 
+  width: 7
+  height: 7
+  boardLayout: []
+  dots:
+  - {fileID: 7562094170143975760, guid: 18761c5341fbda143a7e80fa054a21c2, type: 3}
+  - {fileID: 9083632785453352498, guid: 7207db7af124d4b49a029206af4afdcc, type: 3}
+  - {fileID: 6203513479988757225, guid: 18ad713510a244a45984649607a6bd14, type: 3}
+  - {fileID: 2329759008496692766, guid: edd5a2ed837c03842a6afc2b74a87725, type: 3}
+  scoreGoals: 6400000090010000bc020000
+  endGameRequirements:
+    gameType: 0
+    counterValue: 10
+  levelGoals:
+  - numberNeeded: 7
+    numberCollected: 3
+    goalSprite: {fileID: 21300000, guid: 97e6e49b3944fbb4da6e401bcb8ef4f9, type: 3}
+    matchValue: CandyBall
+  - numberNeeded: 10
+    numberCollected: 3
+    goalSprite: {fileID: 21300000, guid: b399aa09934f90c4c897060ba5f61c08, type: 3}
+    matchValue: BananaPie
+  - numberNeeded: 5
+    numberCollected: 3
+    goalSprite: {fileID: 21300000, guid: 3dbe7950a0d350143984fbda8b47cd4c, type: 3}
+    matchValue: Cookie
