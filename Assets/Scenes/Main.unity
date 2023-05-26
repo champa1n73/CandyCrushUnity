@@ -556,7 +556,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.136, y: 0.16964361}
   m_AnchorMax: {x: 0.86600006, y: 0.8336301}
-  m_AnchoredPosition: {x: -0.50006104, y: -1.5}
+  m_AnchoredPosition: {x: -0.5, y: -1.5}
   m_SizeDelta: {x: 0.6001892, y: 2.3000183}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &165286873
@@ -693,8 +693,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 237436165}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.00000047683716, y: 0.00000047683716, z: 0.0000076293945}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1697,7 +1697,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.136, y: 0.16964361}
   m_AnchorMax: {x: 0.86600006, y: 0.8336301}
-  m_AnchoredPosition: {x: -0.50006104, y: -1.5}
+  m_AnchoredPosition: {x: -0.5, y: -1.5}
   m_SizeDelta: {x: 0.6001892, y: 2.3000183}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &519918426
@@ -2284,7 +2284,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.136, y: 0.16964361}
   m_AnchorMax: {x: 0.86600006, y: 0.8336301}
-  m_AnchoredPosition: {x: -0.50006104, y: -1.5}
+  m_AnchoredPosition: {x: -0.5, y: -1.5}
   m_SizeDelta: {x: 0.6001892, y: 2.3000183}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &823042966
@@ -2647,9 +2647,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Padding:
-    m_Left: 10
-    m_Right: 10
-    m_Top: 25
+    m_Left: 0
+    m_Right: 0
+    m_Top: 5
     m_Bottom: 20
   m_ChildAlignment: 4
   m_Spacing: 35
@@ -3675,12 +3675,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Padding:
-    m_Left: 30
-    m_Right: 30
-    m_Top: 60
-    m_Bottom: 40
+    m_Left: 15
+    m_Right: 15
+    m_Top: 45
+    m_Bottom: 35
   m_ChildAlignment: 4
-  m_Spacing: 60
+  m_Spacing: 40
   m_ChildForceExpandWidth: 1
   m_ChildForceExpandHeight: 1
   m_ChildControlWidth: 1

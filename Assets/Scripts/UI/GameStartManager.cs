@@ -1,3 +1,7 @@
+/* Name: Nguyen Tran Gia Khuong
+ Member Nguyen Tran Gia Khuong - ITITDK21060
+ Purpose: A Candy Crush clone
+*/
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,6 +13,7 @@ public class GameStartManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Application.targetFrameRate = 60;
         startPanel.SetActive(true);
         levelPanel.SetActive(false);
     }

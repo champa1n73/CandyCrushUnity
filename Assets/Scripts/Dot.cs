@@ -1,3 +1,7 @@
+/* Name: Nguyen Tran Gia Khuong
+ Member Nguyen Tran Gia Khuong - ITITDK21060
+ Purpose: A Candy Crush clone
+*/
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -58,7 +62,7 @@ public class Dot : MonoBehaviour
 
     // This is for testing and debug only
 
-    private void OnMouseOver()
+    /*private void OnMouseOver()
     {
         if (Input.GetMouseButtonDown(1))
         {
@@ -66,7 +70,7 @@ public class Dot : MonoBehaviour
             GameObject color = Instantiate(colorBomb, transform.position, Quaternion.identity);
             color.transform.parent = this.transform;
         }
-    }
+    }*/
 
     // Update is called once per frame
     void Update()
@@ -83,7 +87,7 @@ public class Dot : MonoBehaviour
         {
             // Move Towards the target
             tempPosition = new Vector2(targetX, transform.position.y);
-            transform.position = Vector2.Lerp(transform.position, tempPosition, 0.05f);
+            transform.position = Vector2.Lerp(transform.position, tempPosition, 0.5f);
             if (board.allDots[column, row] != this.gameObject)
             {
                 board.allDots[column, row] = this.gameObject;
@@ -102,7 +106,7 @@ public class Dot : MonoBehaviour
         {
             // Move Towards the target
             tempPosition = new Vector2(transform.position.x, targetY);
-            transform.position = Vector2.Lerp(transform.position, tempPosition, 0.05f);
+            transform.position = Vector2.Lerp(transform.position, tempPosition, 0.5f);
             if (board.allDots[column, row] != this.gameObject)
             {
                 board.allDots[column, row] = this.gameObject;

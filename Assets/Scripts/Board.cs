@@ -1,3 +1,7 @@
+/* Name: Nguyen Tran Gia Khuong
+ Member Nguyen Tran Gia Khuong - ITITDK21060
+ Purpose: A Candy Crush clone
+*/
 using System.Collections;
 using System.Collections.Generic;
 using System.Drawing;
@@ -74,6 +78,7 @@ public class Board : MonoBehaviour
 
     private void Awake()
     {
+        /*Application.targetFrameRate = 60;*/
         if (PlayerPrefs.HasKey("Current Level"))
         {
             level = PlayerPrefs.GetInt("Current Level");
@@ -493,7 +498,7 @@ public class Board : MonoBehaviour
     private IEnumerator FillBoardCo()
     {
 
-        yield return new WaitForSeconds(refillDelay);
+        /*yield return new WaitForSeconds(refillDelay);*/
         RefillBoard();
         findMatches.FindAllMatches();
         yield return new WaitForSeconds(refillDelay);

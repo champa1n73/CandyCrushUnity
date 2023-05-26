@@ -1,0 +1,245 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="SoundManager" Collapsed="true">
+    <Position X="22.75" Y="14.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAABAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\SoundManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BackToSplash" Collapsed="true">
+    <Position X="14.25" Y="14.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQIAAAAACAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\UI\BackToSplash.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ConfirmPanel" Collapsed="true">
+    <Position X="16" Y="14.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAABAQCAAAAAAAAAAQAAAAAEAAAAAgAQAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\UI\ConfirmPanel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameStartManager" Collapsed="true">
+    <Position X="11" Y="14.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAACAAAAABAAAAAAAAIAQBAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\UI\GameStartManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LevelButton" Collapsed="true">
+    <Position X="2.75" Y="14.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQEAABAICAAAAIAAAAKSBAAAAEAAAAAAAABAAAAAgA=</HashCode>
+      <FileName>Assets\Scripts\UI\LevelButton.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PauseManager" Collapsed="true">
+    <Position X="0.75" Y="14.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAgAACAAEAAAAAAAAAAEAAAAAAAAIAAAAAAAIAA=</HashCode>
+      <FileName>Assets\Scripts\UI\PauseManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BackgroundTile" Collapsed="true">
+    <Position X="6.5" Y="14.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAYAAAAAACAAAAAAAAAAAAAAABAAAAAAAAAAhAACAAA=</HashCode>
+      <FileName>Assets\Scripts\BackgroundTile.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MatchType" Collapsed="true">
+    <Position X="24" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAABAACAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Board.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TileType" Collapsed="true">
+    <Position X="30.25" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADgAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Board.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Board">
+    <Position X="34.5" Y="14.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAqUQAQICCQAA8AZBiAcCgAAIEAAAESBACQAIADwEA=</HashCode>
+      <FileName>Assets\Scripts\Board.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="boardLayout" />
+      <Field Name="breakableTilePrefab" />
+      <Field Name="breakableTiles" />
+      <Field Name="currentDot" />
+      <Field Name="currentState" />
+      <Field Name="destroyEffect" />
+      <Field Name="dots" />
+      <Field Name="findMatches" />
+      <Field Name="goalManager" />
+      <Field Name="matchType" />
+      <Field Name="scoreManager" />
+      <Field Name="soundManager" />
+      <Field Name="tilePrefab" />
+      <Field Name="world" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Field Name="allDots" />
+      <Field Name="blankSpaces" />
+      <Field Name="scoreGoals" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="CameraScalar" Collapsed="true">
+    <Position X="24.75" Y="14.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAACAAAAABAAAABAAAAAAAAAAAIgAgAAACAAA=</HashCode>
+      <FileName>Assets\Scripts\CameraScalar.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Dot" Collapsed="true">
+    <Position X="4.5" Y="14.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EB4gAAAQMCAEIAABCwBAAQACQhgAgEAAIMECBAAyAAA=</HashCode>
+      <FileName>Assets\Scripts\Dot.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EndgameRequirements" Collapsed="true">
+    <Position X="32" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAgAAAAA=</HashCode>
+      <FileName>Assets\Scripts\EndgameManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EndgameManager" Collapsed="true">
+    <Position X="8.5" Y="14.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAEAAAAiAQgAAAAEAAAAAgAAEAAAECsACAAAAQAAA=</HashCode>
+      <FileName>Assets\Scripts\EndgameManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FadePanelController" Collapsed="true">
+    <Position X="18.75" Y="14.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAgAAAAAAAAAAACAAAAAAAQAAAAAAAABAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\FadePanelController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FindMatches" Collapsed="true">
+    <Position X="27" Y="14.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAAQCAAAAQAAAAAAQAACAAAAQESIAAACgCAAAQ=</HashCode>
+      <FileName>Assets\Scripts\FindMatches.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BlankGoal">
+    <Position X="28.25" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIQAAAAAAAAAAAAAAACAAAQAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\GoalManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GoalManager" Collapsed="true">
+    <Position X="20.75" Y="14.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAIICAAAAAAAAAAAAAAAAAgAAAAIFCgAADAAAA=</HashCode>
+      <FileName>Assets\Scripts\GoalManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GoalPanel" Collapsed="true">
+    <Position X="31" Y="14.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAACCAAAAAAAEUACAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\GoalPanel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HintManager" Collapsed="true">
+    <Position X="32.75" Y="14.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAABAAQGAAAAAAAAAAAAAAIAkAAAAIIAAAEAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\HintManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ScoreManager" Collapsed="true">
+    <Position X="29" Y="14.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAKAAAQAAAAAIAAAAAABAAAAAJCAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\ScoreManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="World" Collapsed="true">
+    <Position X="16.25" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Scriptable Objects\World.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Level" Collapsed="true">
+    <Position X="11.75" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAIAAQAAUAQAAAQAAAAAAAAAAAAAAAAACAAAA=</HashCode>
+      <FileName>Assets\Scripts\Scriptable Objects\Level.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UnityEngine.MonoBehaviour" Collapsed="true">
+    <Position X="6" Y="12" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="UnityEngine.Behaviour" Collapsed="true">
+    <Position X="6" Y="6.75" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="UnityEngine.Component" Collapsed="true">
+    <Position X="6.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="UnityEngine.Object" Collapsed="true">
+    <Position X="9.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="System.Object" Collapsed="true">
+    <Position X="21.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="UnityEngine.ScriptableObject" Collapsed="true">
+    <Position X="13" Y="4.75" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="UnityEngine.GameObject" Collapsed="true">
+    <Position X="38" Y="14.5" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="System.Boolean" Collapsed="true">
+    <Position X="37.5" Y="11.5" Width="1.5" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="System.Int32" Collapsed="true">
+    <Position X="38.5" Y="20.25" Width="1.5" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Enum Name="GameState" Collapsed="true">
+    <Position X="35.5" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEAAQACAAAAAAAAAAAAAAAAEAAAAAAAAIAA=</HashCode>
+      <FileName>Assets\Scripts\Board.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="TileKind" Collapsed="true">
+    <Position X="39" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ADAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Board.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="GameType" Collapsed="true">
+    <Position X="37.25" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAQA=</HashCode>
+      <FileName>Assets\Scripts\EndgameManager.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

@@ -14,7 +14,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   width: 6
   height: 8
-  boardLayout: []
+  boardLayout:
+  - x: 0
+    y: 0
+    tileKind: 1
+  - x: 0
+    y: 7
+    tileKind: 1
+  - x: 5
+    y: 0
+    tileKind: 1
+  - x: 5
+    y: 7
+    tileKind: 1
+  - x: 2
+    y: 3
+    tileKind: 0
+  - x: 3
+    y: 4
+    tileKind: 0
+  - x: 4
+    y: 5
+    tileKind: 0
   dots:
   - {fileID: 7562094170143975760, guid: 18761c5341fbda143a7e80fa054a21c2, type: 3}
   - {fileID: 9083632785453352498, guid: 7207db7af124d4b49a029206af4afdcc, type: 3}
@@ -27,14 +48,14 @@ MonoBehaviour:
     counterValue: 150
   levelGoals:
   - numberNeeded: 2
-    numberCollected: 16
-    goalSprite: {fileID: 21300000, guid: 97e6e49b3944fbb4da6e401bcb8ef4f9, type: 3}
-    matchValue: CandyBall
+    numberCollected: 0
+    goalSprite: {fileID: 21300000, guid: b215398299451534994c86385e683f9b, type: 3}
+    matchValue: Breakable
   - numberNeeded: 5
-    numberCollected: 10
+    numberCollected: 0
     goalSprite: {fileID: 21300000, guid: b399aa09934f90c4c897060ba5f61c08, type: 3}
     matchValue: BananaPie
   - numberNeeded: 5
-    numberCollected: 15
+    numberCollected: 0
     goalSprite: {fileID: 21300000, guid: 5794391a9e230454bab6de04a6dc11c3, type: 3}
     matchValue: Cupcake
