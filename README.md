@@ -1,4 +1,5 @@
 # CandyCrush
+All the code files are in CandyCrush\Assets\Scripts
 
 To compile and run an existing Unity project, follow these general instructions:
 
